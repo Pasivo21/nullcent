@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useRouter, usePathname } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabaseClient'
 import { User } from '@supabase/supabase-js'
 import DashboardOverview from './DashboardOverview'
@@ -18,7 +18,6 @@ interface MenuItem {
 
 export default function DashboardLayout() {
   const router = useRouter()
-  const pathname = usePathname()
   const [activeTab, setActiveTab] = useState('overview')
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [currentUser, setCurrentUser] = useState<User | null>(null)
